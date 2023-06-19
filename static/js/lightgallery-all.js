@@ -436,7 +436,7 @@
                 html = this.$items.eq(index).attr('data-html');
             }
 
-            if (!src) {
+           if (!src) {
                 if(html) {
                     return {
                         html5: true

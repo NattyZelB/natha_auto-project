@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,8 +81,8 @@ WSGI_APPLICATION = 'natha_auto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'NathaAuto_DB',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'NathaAuto-DB',
         'USER': 'postgres',
         'PASSWORD': 'nattanan&&##1111',
         'HOST': 'localhost',
@@ -137,6 +138,12 @@ STATICFILES_DIRS = [
 #media setting
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
