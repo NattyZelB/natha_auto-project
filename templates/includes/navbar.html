@@ -12,8 +12,7 @@
             <div class="navbar-collapse collapse w-100" id="navbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a
-                                {% if '/' == request.path %}
+                        <a {% if '/' == request.path %}
                         class= "nav-link active"
                         {% else %}
                         class = "nav-link"
@@ -23,8 +22,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a
-                                {% if 'cars' == request.path %}
+                        <a {% if 'cars' == request.path %}
                         class= "nav-link active"
                         {% else %}
                         class = "nav-link"
@@ -34,43 +32,38 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a
-                                 {% if 'about' == request.path %}
+                        <a {% if 'about' == request.path %}
                         class= "nav-link active"
                         {% else %}
                         class = "nav-link"
                         {% endif %}
                                 href="{% url 'about' %}">
-                            About
+                            Over
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a
-                                 {% if 'services' == request.path %}
+                        <a {% if 'services' == request.path %}
                         class= "nav-link active"
                         {% else %}
                         class = "nav-link"
                         {% endif %}
                                 href="{% url 'services' %}">
-                            Services
+                            Diensten
                         </a>
                     </li>
-
-
                     <li class="nav-item dropdown">
-                        <a
-                                 {% if 'contract' == request.path %}
+                        <a {% if 'contract' == request.path %}
                         class= "nav-link active"
                         {% else %}
                         class = "nav-link"
                         {% endif %}
-                                href="{% url 'contract' %}">Contact</a>
+                                href="{% url 'contact' %}">Contact</a>
                     </li>
-                    <li class="nav-item dropdown m-hide">
+                  <li class="nav-item dropdown m-hide">
                         <a href="#full-page-search" class="nav-link h-icon">
                             <i class="fa fa-search"></i>
                         </a>
-                    </li>
+                  </li>
                 </ul>
             </div>
         </nav>

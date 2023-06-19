@@ -320,7 +320,7 @@ $(function () {
     $(document).ready(function () {
         $(".player").mb_YTPlayer(
             {
-                mobileFallbackImage: 'img/banner/banner-1.jpg'
+                mobileFallbackImage: 'static/img/banner/banner-1.jpg'
             }
         );
     });
@@ -383,7 +383,7 @@ $(function () {
 
 
     // Slick Sliders
-    $('.slick-carousel').each(function () {
+  /*  $('.slick-carousel').each(function () {
         var slider = $(this);
         $(this).slick({
             infinite: true,
@@ -391,7 +391,7 @@ $(function () {
             arrows: false,
             centerMode: true,
             centerPadding: '0'
-        });
+       });
         
         $(this).closest('.slick-slider-area').find('.slick-prev').on("click", function () {
             slider.slick('slickPrev');
@@ -399,7 +399,7 @@ $(function () {
         $(this).closest('.slick-slider-area').find('.slick-next').on("click", function () {
             slider.slick('slickNext');
         });
-    });
+    });*/
 
 
     $(".dropdown.btns .dropdown-toggle").on('click', function() {
