@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os.path
 from pathlib import Path
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,21 +92,8 @@ TEMPLATES = [
 #     'allauth.account.auth_backends.AuthenticationBackend'
 # ]
 
-SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'APP': {
-            'client_id': '727541972707875',
-            'secret': '10b19b76eed641dedbc7e4202ed09810',
-            'key': '',
-       }
-    },
-    'google': {
-        'client_id': '300436809149-nru83m4snb82jrtguvg7q9g4ibgop6c0.apps.googleusercontent.com',
-        'secret': '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',
-        'key': '',
 
-    }
-}
+
 
 WSGI_APPLICATION = 'natha_auto.wsgi.application'
 
@@ -113,15 +101,15 @@ WSGI_APPLICATION = 'natha_auto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NathaAuto_DB',
-        'USER': 'postgres',
-        'PASSWORD': 'nattanan&&##1111',
-        'HOST': 'localhost',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'NathaAuto_DB',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nattanan&&##1111',
+#         'HOST': 'localhost',
+#     }
+# }
 
 # Provider specific settings
 
