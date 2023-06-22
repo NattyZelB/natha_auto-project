@@ -109,13 +109,13 @@ WSGI_APPLICATION = 'natha_auto.wsgi.application'
 #          'ENGINE': 'django.db.backends.postgresql',
 #          'NAME': 'NathaAuto_DB',
 #          'USER': 'postgres',
-#          'PASSWORD': 'nattanan&&##1111',
+#          'PASSWORD': 'nattanan1111',
 #          'HOST': 'localhost',
 #      }
 #  }
 
 # Provider specific settings
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:nattanan&&##1111@localhost/NathaAuto_DB')}
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:nattanan1111@localhost/NathaAuto_DB')}
 
 
 
