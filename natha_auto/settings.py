@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os.path
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,11 +29,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
+    'contacts.apps.ContactsConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
@@ -43,6 +46,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'multiselectfield',
+   # 'django.contrib.sites',
+     'allauth',
+     'allauth.account',
+     'allauth.socialaccount',
+
+
+
+     #provider
+     'allauth.socialaccount.providers.facebook',
+     'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +86,27 @@ TEMPLATES = [
     },
 ]
 
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend'
+# ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'APP': {
+            'client_id': '727541972707875',
+            'secret': '10b19b76eed641dedbc7e4202ed09810',
+            'key': '',
+       }
+    },
+    'google': {
+        'client_id': '300436809149-nru83m4snb82jrtguvg7q9g4ibgop6c0.apps.googleusercontent.com',
+        'secret': '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',
+        'key': '',
+
+    }
+}
+
 WSGI_APPLICATION = 'natha_auto.wsgi.application'
 
 
@@ -82,12 +116,17 @@ WSGI_APPLICATION = 'natha_auto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NathaAuto-DB',
+        'NAME': 'NathaAuto_DB',
         'USER': 'postgres',
         'PASSWORD': 'nattanan&&##1111',
         'HOST': 'localhost',
     }
 }
+
+# Provider specific settings
+
+
+
 
 
 # Password validation
@@ -144,6 +183,20 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = 'dashboard'
+
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+SOCIAL_AUTH_FACEBOOK_AUTH_EXTRA_ARGUMENTS = {'display': 'popup', }
+
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

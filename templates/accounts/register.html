@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-
+{% block title %} | Registeer {% endblock %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% load static %}
-
 {% block content %}
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -63,8 +64,8 @@
                         </div>
                         <div class="clearfix"></div>
                         <ul class="social-list">
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+                            <li><a href="{% provider_login_url 'facebook' method='oauth2' %}" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="{% provider_login_url 'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
                     </form>
                     <p>Al lid? <a href="{% url 'login' %}" class="thembo"> Login hier</a></p>

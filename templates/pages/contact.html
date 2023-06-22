@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %}| Contact {% endblock %}
 {% block content %}
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -8,7 +8,7 @@
             <h1>Contact Us</h1>
             <ul class="breadcrumbs">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li class="active">Contact Us</li>
+                <li class="active">Neem contact met ons op</li>
             </ul>
         </div>
     </div>
@@ -20,21 +20,23 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
-            <h1>Contact <span>Us</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <h1>Contact <span>Ons</span></h1>
+
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
+            {% include 'includes/message.html' %}
+            {% csrf_token %}
             <div class="row">
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-md-6 text-left">
                             <div class="form-group name">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                <input type="text" name="name" class="form-control" placeholder="Naam" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group email">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="E-mail" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -44,17 +46,17 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group number">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+                                <input type="text" name="phone" class="form-control" placeholder="Telefoonnummer">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group message">
-                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Schrijf een bericht"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="send-btn text-center">
-                                <button type="submit" class="btn btn-md button-theme">Send Message</button>
+                                <button type="submit" class="btn btn-md button-theme">Bericht versturen</button>
                             </div>
                         </div>
                     </div>
@@ -66,8 +68,8 @@
                                 <i class="flaticon-phone"></i>
                             </div>
                             <div class="detail">
-                                <h5>Phone:</h5>
-                                <p><a href="#">0477 8556 552</a></p>
+                                <h5>GSM:</h5>
+                                <p><a href="#">0478 3292 86</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -75,8 +77,8 @@
                                 <i class="flaticon-mail"></i>
                             </div>
                             <div class="detail">
-                                <h5>Email:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <h5>E-mail:</h5>
+                                <p><a href="#">info@nathaauto.be</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -84,17 +86,8 @@
                                 <i class="flaticon-earth"></i>
                             </div>
                             <div class="detail">
-                                <h5>Web:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
-                            </div>
-                        </div>
-                        <div class="ci-box mb-0">
-                            <div class="icon">
-                                <i class="flaticon-fax"></i>
-                            </div>
-                            <div class="detail">
-                                <h5>Fax:</h5>
-                                <p><a href="#">+0477 85X6 552</a></p>
+                                <h5>Website:</h5>
+                                <p><a href="#">www.nathaauto.be</a></p>
                             </div>
                         </div>
                     </div>
