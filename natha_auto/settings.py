@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(3ku6&q0(1vmq(r#m4_0heh_ib7aeivy=4ps&3tz_uva-9+450
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nathaauto-eaa7adc1ad39.herokuapp.com/', 'nathaauto.be', 'www.nathaauto.be']
+ALLOWED_HOSTS = ['nathaauto-eaa7adc1ad39.herokuapp.com', 'nathaauto.be', 'www.nathaauto.be']
 
 
 
