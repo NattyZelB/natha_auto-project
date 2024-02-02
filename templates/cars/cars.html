@@ -3,6 +3,7 @@
 {% block content %}
 {% load static %}
 {% load humanize %}
+{% load euroformat %}
 
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -32,7 +33,7 @@
                                 <a href="{% url 'car_detail' car.id %}" class="car-img">
                                     <div class="tag">Verkopen</div>
                                     <div class="price-box">
-                                        <span>€ {{car.price | intcomma}}</span>
+                                        <span>€ {{car.price | euroformat}}</span>
                                     </div>
                                     <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car">
                                 </a>
@@ -80,7 +81,7 @@
                                 </div>
                                 <ul class="facilities-list clearfix">
                                     <li>{{car.fuel_type}}</li>
-                                    <li>{{car.kilometers | intcomma}} km</li>
+                                    <li>{{car.kilometers | euroformat}} km</li>
                                     <li>{{car.transmission}}</li>
                                     <li>{{car.body_type}}</li>
                                     <li>{{car.color}}</li>

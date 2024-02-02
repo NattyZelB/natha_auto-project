@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(3ku6&q0(1vmq(r#m4_0heh_ib7aeivy=4ps&3tz_uva-9+450'
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['nathaauto-eaa7adc1ad39.herokuapp.com', 'nathaauto.be', 'www.nathaauto.be', '*']
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'contacts.apps.ContactsConfig',
     'accounts.apps.AccountsConfig',
+    'euroformat.apps.EuroformatConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
      'allauth',
      'allauth.account',
      'allauth.socialaccount',
+     'babel',
 
 
 
@@ -84,7 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+                ],
         },
     },
 ]
@@ -184,11 +186,11 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 SOCIAL_AUTH_FACEBOOK_AUTH_EXTRA_ARGUMENTS = {'display': 'popup', }
 
 # #SMTP configuration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'developer.nattananphermsin@gmail.com'
-EMAIL_HOST_PASSWORD = 'zwpuceqaawoxhbsj'
-EMAIL_USE_TLS = True
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 # Whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

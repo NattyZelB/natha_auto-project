@@ -2,7 +2,8 @@
 {% block title %}| {{single_car.car_title}} {{single_car.model}}{% endblock %}
 {% block content %}
 {% load static %}
- {% load humanize %}
+{% load humanize %}
+{% load euroformat %}
 
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -34,7 +35,7 @@
                             </h6>
                         </div>
                         <div class="pull-right">
-                            <h3><span>€ {{single_car.price | intcomma}}</span></h3>
+                            <h3><span>€ {{single_car.price | euroformat}}</span></h3>
                         </div>
                     </div>
                      <div id="carDetailsSlider" class="carousel car-details-sliders slide mb-40">
@@ -182,7 +183,7 @@
                                 <span>Interior:</span>{{single_car.interior}}
                             </li>
                             <li>
-                                <span>Kilometerstand:</span>{{single_car.kilometers |intcomma}}
+                                <span>Kilometerstand:</span>{{single_car.kilometers |euroformat}}
                             </li>
                             <li>
                                 <span>Deurs:</span>{{single_car.doors}}
