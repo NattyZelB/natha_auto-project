@@ -73,6 +73,7 @@ MIDDLEWARE = [
 
 
 
+
 ROOT_URLCONF = 'natha_auto.urls'
 
 TEMPLATES = [
